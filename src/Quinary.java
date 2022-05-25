@@ -22,14 +22,16 @@ public class Quinary {
         // 2. 처리
         int remainder = 0;
         int quotient = n;
+        int result = 0;
 
         // (1) 몫이 0이 될 때까지 반복해서 나눈다. => 반복문인 while 이나 for 사용 가능
         for(int i = 1; quotient / 5 == 0; i += 1) {
-            remainder += n % 5;
-            quotient = n / 5 + remainder;
+            remainder = n % 5;
+            quotient = n / 5;
+            result += remainder;
 
             if (i > 1) {
-                remainder *= 10;
+                result *= 10;
             }
         }
 
@@ -38,6 +40,6 @@ public class Quinary {
         // (3) 몫이 0이 되면 반복을 탈출하고, 결과값을 출력한다.
 
         // 3. 출력
-        System.out.println(remainder);
+        System.out.println(result);
     }
 }
